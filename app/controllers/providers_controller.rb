@@ -4,6 +4,11 @@ class ProvidersController < ApplicationController
   # GET /providers or /providers.json
   def index
     @providers = Provider.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data Provider.to_csv }
+    end
   end
 
   # GET /providers/1 or /providers/1.json
