@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Providers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Active</th>
+      <th>Api token</th>
+      <th>Api token required</th>
+      <th>Default</th>
+      <th>Shortened links count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @providers.each do |provider| %>
+      <tr>
+        <td><%= provider.name %></td>
+        <td><%= provider.active %></td>
+        <td><%= provider.api_token %></td>
+        <td><%= provider.api_token_required %></td>
+        <td><%= provider.default %></td>
+        <td><%= provider.shortened_links_count %></td>
+        <td><%= link_to 'Show', provider %></td>
+        <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
